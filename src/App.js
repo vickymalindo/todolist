@@ -11,10 +11,9 @@ function App() {
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
 
-  const arr = []
-
   const creatNote = (e) => {
     e.preventDefault()
+    const arr = []
     const getNotesStorage = localStorage.getItem('todo')
     const obj = { title, desc }
     if (getNotesStorage === null) {
@@ -53,6 +52,8 @@ function App() {
     const getLocal = localStorage.getItem('todo')
     const parseData = JSON.parse(getLocal)
     setData(parseData)
+    setTitle('')
+    setDesc('')
   }
 
   const clickTitle = (values, id) => {
@@ -110,7 +111,7 @@ function App() {
         </div>
         <div className="list">
           <p className="title_note">Here’s your notes!</p>
-          {data === null ? (
+          {data === null || data.length === 0 ? (
             <p style={{ fontSize: '14px' }}>
               Data not found, please insert your note
             </p>

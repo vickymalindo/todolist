@@ -152,7 +152,7 @@ footer {
 
 .follow {
   color: #d9d9d9;
-  font-size: 20px;
+  font-size: 16px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -163,12 +163,14 @@ footer {
 
 .twitter {
   color: #1da1f2;
-  font-size: 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .linkedin {
   color: #007ab6;
-  font-size: 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .instagram {
@@ -180,14 +182,16 @@ footer {
     #d6249f 60%,
     #285aeb 90%
   );
-  font-size: 20px;
+  font-size: 16px;
   color: #e4dcdc;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .copy {
   color: #fff;
   text-align: center;
+  font-size: 17px;
   font-family: 'Kaisei Opti';
 }
 
@@ -195,9 +199,16 @@ footer {
   body {
     background-size: 820px 1180px;
   }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   body {
     background-size: auto;
   }
@@ -205,13 +216,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-  }
-
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
   }
 
   .form,
@@ -226,5 +230,12 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .follow,
+  .instagram,
+  .linkedin,
+  .twitter {
+    font-size: 20px;
   }
 }

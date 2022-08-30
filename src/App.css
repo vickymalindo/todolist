@@ -20,6 +20,24 @@ body {
   display: block;
 }
 
+::placeholder {
+  /* Firefox */
+  font-family: 'Kaisei Opti';
+  font-size: 16px;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: 'Kaisei Opti';
+  font-size: 16px;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-family: 'Kaisei Opti';
+  font-size: 16px;
+}
+
 /* Navbar */
 
 header {
@@ -198,6 +216,12 @@ footer {
 @media (min-width: 1024px) {
   body {
     background-size: 820px 1180px;
+  }
+
+  header {
+    width: 90%;
+    margin: 14px auto 0;
+    border-radius: 25px;
   }
 
   main {

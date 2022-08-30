@@ -12,20 +12,24 @@ function App() {
   const [desc, setDesc] = useState('')
 
   const creatNote = (e) => {
-    e.preventDefault()
-    const arr = []
-    const getNotesStorage = localStorage.getItem('todo')
-    const obj = { title, desc }
-    if (getNotesStorage === null) {
-      console.log('bisa masuk ke local null')
-      arr.push(obj)
-      const stringArr = JSON.stringify(arr)
-      localStorage.setItem('todo', stringArr)
+    if (title.length === 0 || desc.length === 0) {
+      alert('please insert title and description')
     } else {
-      const jsonArr = JSON.parse(getNotesStorage)
-      jsonArr.push(obj)
-      const stringArr = JSON.stringify(jsonArr)
-      localStorage.setItem('todo', stringArr)
+      e.preventDefault()
+      const arr = []
+      const getNotesStorage = localStorage.getItem('todo')
+      const obj = { title, desc }
+      if (getNotesStorage === null) {
+        console.log('bisa masuk ke local null')
+        arr.push(obj)
+        const stringArr = JSON.stringify(arr)
+        localStorage.setItem('todo', stringArr)
+      } else {
+        const jsonArr = JSON.parse(getNotesStorage)
+        jsonArr.push(obj)
+        const stringArr = JSON.stringify(jsonArr)
+        localStorage.setItem('todo', stringArr)
+      }
     }
   }
   const handleSubmit = (e) => {
@@ -72,6 +76,12 @@ function App() {
     getData()
   }
 
+  const handleBack = () => {
+    setIsUpdate(false)
+    setTitle('')
+    setDesc('')
+  }
+
   useEffect(() => {
     getData()
   }, [])
@@ -98,7 +108,7 @@ function App() {
           />
           <div className="wrapper_button">
             <button
-              onClick={() => setIsUpdate(false)}
+              onClick={handleBack}
               className={isUpdate === true ? 'btn_create back block' : 'hidden'}
             >
               <MdKeyboardArrowLeft />

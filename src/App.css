@@ -209,7 +209,7 @@ footer {
 .copy {
   color: #fff;
   text-align: center;
-  font-size: 17px;
+  font-size: 12px;
   font-family: 'Kaisei Opti';
 }
 
@@ -236,6 +236,7 @@ footer {
   body {
     background-size: auto;
   }
+
   header {
     display: flex;
     justify-content: space-between;
